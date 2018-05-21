@@ -4,7 +4,6 @@
 #include "exception.hpp"
 
 void Parser::S() {
-   // while (cur_type != LEX_FIN) {
         E();
         while (st_oper.size() != 0) {
             if (st_oper.top() == ASSIGN) {
@@ -13,7 +12,6 @@ void Parser::S() {
             st_oper.pop();
         }
         l_value = true;
-   // }
 }
 
 void Parser::E() {
@@ -117,7 +115,7 @@ void Parser::check_lex()
     bool func_flag = false;
     for (auto c : name) {
         if (c != 'i' && c != 'j' && c != 'k' && c != 's' && c != 't' && c != 'a' && c != 'f') {
-            throw SyntaxException("In Parser::check_lex(): Undefined lexeme name", cur_pos.get_str_num(), cur_pos.get_sym_num()); // !!!!!
+            throw SyntaxException("In Parser::check_lex(): Undefined lexeme name", cur_pos.get_str_num(), cur_pos.get_sym_num());
         } else if (c == 'a') {
             throw SemanticException("In Parser::check_lex(): Unknown type", cur_pos.get_str_num(), cur_pos.get_sym_num());
         } else if (c == 'f') {
