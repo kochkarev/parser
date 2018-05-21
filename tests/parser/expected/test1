@@ -1,0 +1,8 @@
+1) k + 2 : integer
+2) k + 2 + i : 0
+3) k = k + 2 + i : integer
+4) j = k = k + 2 + i : integer
+5) i = j = k = k + 2 + i : integer
+
+Expressions: 
+i = j = k = k + 2 + i : integer
